@@ -1,0 +1,19 @@
+header {
+  top: 120px;
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  /* overflow: auto; */
+  background-color: #004f8c;
+  background-image: url(https://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
+  
+}
+
+header > div {
+  /* float: auto; */
+  position: relative;
+  display: flex; 
+  justify-content: center;
+  /* top: 50%; */
+  /* left: 50%; */
+}

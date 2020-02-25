@@ -1,0 +1,57 @@
+.new-tweet {
+  width : 90%;
+  
+}
+.new-tweet h2 {
+  /* clear: both; */
+  display: flex;
+  justify-content: center;
+  /* float: inline-start; */
+}
+/* the text Field */
+.new-tweet textarea {
+  width: 100%;
+  background-color: inherit;
+  padding-bottom: -10px ;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: solid black 5px;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+
+}
+/* footer : button & counter */
+.new-tweet footer {
+  font-family: 'Bungee', "sans serif";
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+/* The button */
+.new-tweet input {
+  background-color: #004f8c;
+  border: #004f8c 10px;
+  border: 10px;
+  font-style: normal;
+  color : white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* display: flex; 
+  justify-content: flex-start; */
+}
+/* The counter */
+.new-tweet .counter {
+  font-size: inherit;
+  /* font-family: 'Bungee', "sans serif"; */
+  position: relative;
+  /* display: flex; 
+  justify-content: flex-end;
+  right: 3%; */
+  /* padding-right: 5%; */
+  /* padding-bottom: 5%; */
+
+}
