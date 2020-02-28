@@ -26,14 +26,15 @@ body {
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+* Additional CSS can be defined below or in other CSS files, as per instructions
+*/
 
- main {
-   width: 90%;
-   position: relative;
-   top: 520px;
-   /* left: 5%; */
-   border: 5px solid black;
-   margin: auto;
+main {
+  width: 90%;
+  position: relative;
+  top: 520px;
+  /* left: 5%; */
+  border: 5px solid black;
+  margin: auto;
+  margin-bottom: 100px;
  }
