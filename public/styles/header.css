@@ -1,4 +1,4 @@
-header {
+body > header {
   top: 120px;
   height: 400px;
   width: 100%;
@@ -9,7 +9,7 @@ header {
   
 }
 
-header > div {
+body > header > div {
   /* float: auto; */
   position: relative;
   display: flex; 

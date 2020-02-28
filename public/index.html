@@ -42,6 +42,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
         <!-- <h1>Hey Jude! I'm a temp h1 element</h1> -->
+        <!-- New Tweet -->
         <section class="new-tweet">
           <h2>Compose Tweet</h2>
           <form action="/tweets/" method="POST">
@@ -51,6 +52,24 @@
               <span class="counter">140</span>
             </footer>
           </form>
+        </section>
+
+        <!-- All tweets container -->
+        <section id="all-tweets">
+          <!-- tweets container -->
+          <h2>All Tweets</h2>
+          <header>
+            <!-- Left: icon, name; right: @USERNAME (hovered) -->
+            Tweeter Header
+          </header>
+          <article>
+            <!-- the tweet itself -->
+            This is the a Tweet, TWEET!TWEET!
+          </article>
+          <footer>
+            <!-- left: tweetAge; right: 3 icons: flag,retweet,heart -->
+            here lies the tweet footer
+          </footer>
         </section>
       
     </main>
