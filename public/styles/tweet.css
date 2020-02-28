@@ -1,6 +1,7 @@
 .tweet {
   margin: auto;
   margin-top: 10px;
+  margin-bottom: 10px;
   /* display: flex;
   justify-content: center;
   flex-direction: column; */
@@ -11,8 +12,13 @@
 .tweet:hover{
   box-shadow: 5px 10px #888888;
   /* font-size: bold; */
-  font-weight: bolder;
+  /* font-weight: bolder; */
+  text-shadow: 1px 1px #888888;
 }
+.tweet:hover .tweet-header-username {
+  color: grey;
+}
+
 
 .tweet header {
   display: flex;
@@ -21,13 +27,17 @@
   padding-top: 10px;
   font-size: 24px;
   margin-bottom: 25px;
-
+  
+  
 }
+.tweet header > div {
+  display: flex;
+  align-items: center;
+  
+}
+
 .tweet-header-username {
   color: transparent;
-}
-.tweet-header-username:hover {
-  color: grey;
 }
 
 .tweet h2 {
