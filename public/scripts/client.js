@@ -6,6 +6,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// GLOBAL VARIABLES / SETTINGS.
+const maxTweetChar = 140;
+
 const createTweetElement = function (tweetData) {
   // const $tweet = $("<section>").addClass("tweet");
   const markup = `
@@ -111,19 +114,30 @@ $(function(){
     console.log('EVENT OF PREV',event)
     console.log('New Tweet Button clicked, performing ajax call...');
     event.preventDefault();
-    console.log('HEEERE', $(this).parents('form').serialize() );
+    console.log('HEEERE, UNSURREAL', $(this).parents('form') );
+    console.log('HEEERE, SURREAL', $(this).parents('form').serialize() );
     const $tweetText = $(this).parents('form').serialize() ;
+    // VALIDATION: tweetbox can not be null or ex
+    // debugger;
+    // NOTE TO FUTURE SELF: LEAVING "text=" AS IS COULD BE PROBLEMATIC IN THE FUTURE, YOUR PRESENT.
+    if ($tweetText === "text=" ) {
+      alert("The Tweet Box can not be empty.");
+    } else if ($tweetText.length > maxTweetChar) {
+      alert(`The Tweet box can not exceed ${maxTweetChar} characters`);
+    } else {
+      $.ajax( { 
+        method: 'POST',
+        url:'/tweets',
+        data: $tweetText,
+      })
+      .then(function (tweetPost) { //the callback argument value from the ajax request.
+        
+      console.log('Success: ', tweetPost);
+        // $submitTweetButton.replaceWith(tweetPost);
 
-    $.ajax( { 
-      method: 'POST',
-      url:'/tweets',
-      data: $tweetText,
-    })
-    .then(function (tweetPost) { //the callback argument value from the ajax request.
-      
-    console.log('Success: ', tweetPost);
-      // $submitTweetButton.replaceWith(tweetPost);
-    });
+      });
+    }
+
   });
 });
 
