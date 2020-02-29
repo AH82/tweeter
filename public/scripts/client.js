@@ -124,6 +124,7 @@ $(function(){
       alert("The Tweet Box can not be empty.");
     } else if ($tweetText.length > maxTweetChar) {
       alert(`The Tweet box can not exceed ${maxTweetChar} characters`);
+      // maxTweetChar is on top, in "GLOBAL VARIABLES".
     } else {
       $.ajax( { 
         method: 'POST',
