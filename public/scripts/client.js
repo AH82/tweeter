@@ -11,22 +11,35 @@ const maxTweetChar = 140;
 
 const createTweetElement = function (tweetData) {
   // const $tweet = $("<section>").addClass("tweet");
+  // document.createTextNode(str)
+  console.log('tweetData = ', tweetData)
+  console.log('tweetData.content.text =', tweetData.content.text)
+  const $tweet = $('<article>').text(tweetData.content.text);
+  console.log('$tweet = ',$tweet)
+  console.log('$tweet[0].innerHTML = ', $tweet[0].innerHTML)
   const markup = `
   <section class="tweet">
 
   <header>
     <div> <img src="${tweetData.user.avatars}" alt=""> ${tweetData.user.name}</div><div class="tweet-header-username">${tweetData.user.handle}</div>
   </header>
-  <article>
-    ${tweetData.content.text}
-  </article>
+
+<article>`
++$tweet[0].innerHTML+ 
+`</article>
+
   <footer>
     <!-- left: tweetAge; right: 3 icons: flag,retweet,heart -->
     <div>${tweetData.created_at}</div><div>RIGHT SIDE FOOTER</div>
   </footer>
 </section>
   `
-
+/*
+ <article>
+    ${tweetData.content.text}
+    ${document.createTextNode(tweetData.content.text)['text']}
+  </article>
+*/
 
 return markup;
 // return tweet <article>
