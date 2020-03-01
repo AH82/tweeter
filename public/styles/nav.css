@@ -1,15 +1,45 @@
 nav {
   /* fixed on top */
   position: fixed;
+  display: flex;
+  justify-content: space-between;
   height: 120px;
   width: 100%;
-  z-index: auto;
+  z-index: 99;
   background-color: #4056A1;
   color: #FFFFFF ;
   padding: 1.5em;
+  font-size: 1em;
 }
 nav > span {
   font-family: 'Bungee', "sans serif";
+}
+
+nav > button {
+  font-size: 0.3em;
+  background-color: inherit;
+  color: inherit;
+  font: inherit;
+  border: transparent;
+}
+
+nav > button > footer {
+  align-self: flex-end;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  /* background-color: #F44336; */
+  /* height: 200px; */
+  margin: 0 auto 0 auto;
+  transform-origin: top;
+  /* width: 10px; */
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+}
+
+@keyframes bounce-1 {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(15px); }
+  100% { transform: translateY(0); }
 }
 
 /* div {
