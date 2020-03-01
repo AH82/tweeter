@@ -77,6 +77,7 @@ return markup;
 // ]
 
 const renderTweets = function (arrayOfTweetObjs) { /* tweets */
+  $('#tweets-container').empty();
   // appending each tweet to the #tweets-container
   // loops through tweets
   for ( let tweetObj of arrayOfTweetObjs) {
@@ -84,26 +85,26 @@ const renderTweets = function (arrayOfTweetObjs) { /* tweets */
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     let $tweet = createTweetElement(tweetObj);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 }
 // $(document).ready(function() {
 //   // renderTweets(data);
 //   });
 
+const loadTweets = function() { 
+  $.ajax({
+    method: 'GET',
+    url:'/tweets'
+  
+  })
+  .then(function(tweetData) {
+    console.log('tweetData is : ', tweetData);
+    renderTweets(tweetData);
+  }   
+  )};
 
   $(function() {
-    const loadTweets = function() { 
-      $.ajax({
-        method: 'GET',
-        url:'/tweets'
-      
-      })
-      .then(function(tweetData) {
-        console.log('tweetData is : ', tweetData);
-        renderTweets(tweetData);
-      }   
-      )};
       loadTweets();
   });
 
@@ -114,7 +115,7 @@ $(function(){
     console.log('EVENT OF PREV',event)
     console.log('New Tweet Button clicked, performing ajax call...');
     event.preventDefault();
-    console.log('HEEERE, UNSURREAL', $(this).parents('form') );
+    // console.log('HEEERE, UNSURREAL', $(this).parents('form') );
     console.log('HEEERE, SURREAL', $(this).parents('form').serialize() );
     const $tweetText = $(this).parents('form').serialize() ;
     // VALIDATION: tweetbox can not be null or ex
@@ -131,10 +132,11 @@ $(function(){
         url:'/tweets',
         data: $tweetText,
       })
-      .then(function (tweetPost) { //the callback argument value from the ajax request.
-        
-      console.log('Success: ', tweetPost);
+      .then(function () { 
+      loadTweets();
+      console.log('Success: ');
         // $submitTweetButton.replaceWith(tweetPost);
+        // $('#tweets-container').append(tweetPost);
 
       });
     }
