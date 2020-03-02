@@ -9,6 +9,14 @@
 // GLOBAL VARIABLES / SETTINGS.
 const maxTweetChar = 140;
 
+//HELPER FUNCTION: GET DATE DIFFERENCE
+const getTweetAge = function(tweetCreateTime) {
+  let date = (Date.now() - tweetCreateTime)/(1000*60*60*24)
+  if (date < 1) {
+    return Math.floor(date*24) + " hrs ago";
+  } else return Math.floor(date) + " days ago"
+}
+
 const createTweetElement = function (tweetData) {
   // const $tweet = $("<section>").addClass("tweet");
   // document.createTextNode(str)
@@ -17,6 +25,7 @@ const createTweetElement = function (tweetData) {
   const $tweet = $('<article>').text(tweetData.content.text);
   console.log('$tweet = ',$tweet)
   console.log('$tweet[0].innerHTML = ', $tweet[0].innerHTML)
+  const dateAgo = getTweetAge(tweetData.created_at)
   const markup = `
   <section class="tweet">
 
@@ -30,7 +39,7 @@ const createTweetElement = function (tweetData) {
 
   <footer>
     <!-- left: tweetAge; right: 3 icons: flag,retweet,heart -->
-    <div>${tweetData.created_at}</div><div>RIGHT SIDE FOOTER</div>
+    <div>${dateAgo}</div><div>RIGHT SIDE FOOTER</div>
   </footer>
 </section>
   `
