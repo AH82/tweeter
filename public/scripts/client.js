@@ -123,6 +123,8 @@ const loadTweets = function() {
 
 $(function(){
   $('.new-tweet').hide();
+  $('.tweetValidationError').hide();
+
   const $submitTweetButton = $('.new-tweet').find('input');
   console.log($submitTweetButton);
   $submitTweetButton.on('click', function(event) {
@@ -136,11 +138,17 @@ $(function(){
     // debugger;
     // NOTE TO FUTURE SELF: LEAVING "text=" AS IS COULD BE PROBLEMATIC IN THE FUTURE, YOUR PRESENT.
     if ($tweetText === "text=" ) {
-      alert("The Tweet Box can not be empty.");
+      // alert("The Tweet Box can not be empty.");
+      $('.tweetValidationError').slideDown(1000)
+      $('.tweetValidationError > div').html("The Tweet Box can not be empty.");
+
     } else if ($tweetText.length > maxTweetChar) {
-      alert(`The Tweet box can not exceed ${maxTweetChar} characters`);
+      // alert(`The Tweet box can not exceed ${maxTweetChar} characters`);
+      $('.tweetValidationError').slideDown(1000);
+      $('.tweetValidationError > div').text(`The Tweet box can not exceed ${maxTweetChar} characters`)
       // maxTweetChar is on top, in "GLOBAL VARIABLES".
     } else {
+      $('.tweetValidationError').slideUp(1000)
       $.ajax( { 
         method: 'POST',
         url:'/tweets',
@@ -158,7 +166,6 @@ $(function(){
 });
 
 $(function(){
-  $('')
   const writeNewTweetButton = $('nav > button');
   writeNewTweetButton.on('click', function(event){
     $('.new-tweet').slideToggle(1000);

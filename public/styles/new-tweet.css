@@ -63,3 +63,17 @@
   /* padding-bottom: 5%; */
 
 }
+
+.tweetValidationError {
+  margin: auto;
+  width: 96%;
+  display: flex;
+  justify-self: start;
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  border: 3px solid red;
+  padding: 5px;
+  background-color: pink;
+  
+}
