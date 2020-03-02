@@ -67,3 +67,12 @@
   padding-top: 10px;
   font-size: 14px;
 }
+.tweet footer .RSF {
+  display: flex;
+  justify-content: space-around;
+  visibility: hidden
+}
+
+.tweet:hover footer .RSF {
+  visibility: visible;
+}
