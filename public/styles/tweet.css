@@ -2,17 +2,12 @@
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column; */
   width : 90%;
   border: 5px solid black; 
   padding: 10px;
 }
 .tweet:hover{
   box-shadow: 5px 10px #888888;
-  /* font-size: bold; */
-  /* font-weight: bolder; */
   text-shadow: 1px 1px #888888;
 }
 .tweet:hover .tweet-header-username {
@@ -41,10 +36,8 @@
 }
 
 .tweet h2 {
-  /* clear: both; */
   display: flex;
   justify-content: center;
-  /* float: inline-start; */
 }
 .tweet article {
   width: 100%;
@@ -56,7 +49,6 @@
   border-bottom: solid black 5px;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-  /* font-weight: bold; */
 
 }
 /* footer : button & counter */

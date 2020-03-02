@@ -1,9 +1,6 @@
 .new-tweet {
   margin: auto;
   margin-top: 10px;
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column; */
   width : 90%;
   border: 5px solid black; 
   padding: 10px;
@@ -11,10 +8,8 @@
 }
 
 .new-tweet h2 {
-  /* clear: both; */
   display: flex;
   justify-content: center;
-  /* float: inline-start; */
 }
 /* the text Field */
 .new-tweet textarea {
@@ -48,19 +43,12 @@
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  /* display: flex; 
-  justify-content: flex-start; */
 }
+
 /* The counter */
 .new-tweet .counter {
   font-size: inherit;
-  /* font-family: 'Bungee', "sans serif"; */
   position: relative;
-  /* display: flex; 
-  justify-content: flex-end;
-  right: 3%; */
-  /* padding-right: 5%; */
-  /* padding-bottom: 5%; */
 
 }
 
