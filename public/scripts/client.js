@@ -170,6 +170,8 @@ $(function(){
         data: $tweetText,
       })
       .then(function () { 
+      $('.new-tweet textarea').val('');
+      $('.new-tweet').find('span.counter').text(maxTweetChar);
       loadTweets();
       console.log('Success: ');
         // $submitTweetButton.replaceWith(tweetPost);
