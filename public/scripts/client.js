@@ -122,6 +122,7 @@ const loadTweets = function() {
   });
 
 $(function(){
+  $('.new-tweet').hide();
   const $submitTweetButton = $('.new-tweet').find('input');
   console.log($submitTweetButton);
   $submitTweetButton.on('click', function(event) {
@@ -150,10 +151,16 @@ $(function(){
       console.log('Success: ');
         // $submitTweetButton.replaceWith(tweetPost);
         // $('#tweets-container').append(tweetPost);
-
       });
     }
 
   });
 });
 
+$(function(){
+  $('')
+  const writeNewTweetButton = $('nav > button');
+  writeNewTweetButton.on('click', function(event){
+    $('.new-tweet').slideToggle(1000);
+  } )
+})
