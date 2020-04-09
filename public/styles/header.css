@@ -1,5 +1,5 @@
 body > header {
-  top: 120px;
+  top: 0px;
   height: 400px;
   width: 100%;
   position: absolute;
@@ -11,9 +11,26 @@ body > header {
 
 body > header > div {
   /* float: auto; */
+  top: 5%;
   position: relative;
   display: flex; 
   justify-content: center;
   /* top: 50%; */
   /* left: 50%; */
+}
+
+@media only screen and (min-width: 1024px) {
+   body > header {
+    top: 300px;
+    width: 40%;
+    display: flexbox;
+    align-items: stretch;
+    /* position: relative; */
+    /* justify-content: center; */
+    /* align-content: center; */
+    /* float: left; */
+    /* display: inline; */
+
+   }
+
 }

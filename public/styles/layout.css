@@ -19,17 +19,45 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flexbox;
+  flex-direction: column;
 }
 
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
 
+/* Where the tweets are  */
 main {
   width: 90%;
-  position: relative;
   top: 520px;
+  /* top: 120px; */
+  position: relative;
   border: 5px solid black;
   margin: auto;
   margin-bottom: 100px;
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flexbox;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    
+    
+  }
+  main {
+    width: 50%;
+    float: right;
+    top: 120px;
+    margin-right: 5%;
+    margin-top: 5%;
+    /* float: right; */
+    display: flexbox;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
  }

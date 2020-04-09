@@ -7,7 +7,8 @@ nav {
   height: 120px;
   width: 100%;
   z-index: 99;
-  background-color: #4056A1;
+  /* background-color: #4056A1; */
+  background-color: transparent;
   color: #FFFFFF ;
   padding: 1.5em;
   font-size: 1em;
@@ -44,4 +45,10 @@ nav > button:hover > footer {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(15px); }
   100% { transform: translateY(0); }
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  } 
 }
